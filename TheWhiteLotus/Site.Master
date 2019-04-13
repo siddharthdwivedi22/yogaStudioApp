@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TheWhiteLotus.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:PlaceHolder runat="server">     
+          <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>  
+    <webopt:BundleReference runat="server" Path="~/Content/css" /> 
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <style type="text/css">
+        .auto-style4 {
+            height: 25px;
+            width: 287px;
+        }
+        .auto-style5 {
+            height: 25px;
+        }
+        .auto-style6 {
+            width: 147px;
+            height: 85px;
+        }
+        .auto-style7 {
+            font-size: x-large;
+            font-weight: bold;
+        }
+        </style>
+</head>
+<body>
+    <form runat="server">
+        <header>
+            <div class="content-wrapper">
+            <div class="float-right">
+                <nav>
+                </nav>
+            </div>
+                    <ul id="menu">
+                        <li>
+                <div class="float-left">
+                    <span class="auto-style7"><strong>The White Lotus Yoga Studio<br />
+                    <br />
+                    <br />
+                    <br />
+                    </strong></span><br />
+                    <br />
+                            </div>
+                            <a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/Register">Register</a></li>
+                        <li><a id="A1" runat="server" href="~/Login">Login</a></li>
+                        <li><a id="A2" runat="server" href="~/ManageStudio">Manage Studio</a></li>
+                    </ul>
+                <table style="width:100%; height: 115px;">
+                    <tr>
+                        <td class="auto-style4">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img alt="" class="auto-style6" src="Images/Yogameditation.jpg" /></td>
+                        <td class="auto-style5">
+                            </td>
+                    </tr>
+                    </table>
+        </div>
+    </header>
+    <div id="body">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" >
+            <p>
+            </p>
+        </asp:ContentPlaceHolder>
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </div>
+        </div>
+    </footer>
+    </form>
+</body>
+</html>
